@@ -31,7 +31,10 @@ func (f *Factory) NewInstance() sharedstorage.Plugin {
 
 func (f *Factory) InitConfig(config config.Section) {
 }
-
+func (f *Redis) InitConfig(config config.Section) {
+	factory := Factory{}
+	factory.InitConfig(config)
+}
 func (r *Redis) Init(ctx context.Context, config config.Section) error {
 	return nil
 }
